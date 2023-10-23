@@ -13,7 +13,7 @@ import styles from "./styles.module.css"
  * @constructor
  */
 export const InputForm = (props) => {
-  const { todoVal, placeholder, handleTodoVal, handleAddTodo } = props
+  const { todoVal, placeholder, handleAddTodo, handleTodoVal } = props
   const [ isFocused, setIsFocused ] = useState(false)
 
   return (
