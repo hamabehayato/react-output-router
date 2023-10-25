@@ -13,21 +13,14 @@ import { TrashIcon } from "../../atoms/Icons/Trash"
  * @constructor
  */
 export const TodoList = (props) => {
-  const { todoList, setTodos } = props
-
-  const handleDeleteTodo = (id) => {
-    const newTodos = todoList.filter((todo) => {
-      return todo.id !== id;
-    })
-    setTodos(newTodos)
-  }
+  const { todoList, handleDeleteTodo } = props
 
   return (
     <>
     {todoList.map((todo) => (
     <div className={styles.todo} key={todo.id} >
       <p>{todo.text}</p>
-      <button onClick={() => handleDeleteTodo(todo.id)} className={styles.button}>
+      <button onClick={() => handleDeleteTodo(todo.id, todoList)} className={styles.button}>
         <TrashIcon />
       </button>
     </div>

@@ -3,7 +3,6 @@
  *
  * @package components
  */
-import { useState, useMemo } from "react"
 import { InputForm } from "../../atoms/InputForm"
 import { TodoList } from "../../organisms/TodoList"
 import { useTodo } from "../../../hooks/useTodo"
@@ -12,12 +11,12 @@ import styles from "./styles.module.css"
 export const TodoTemplate = () => {
   // console.log(useTodo())
   const [
-    { todoVal, searchVal, setTodos},
+    { todoVal, searchVal, showTodolist },
     {
       handleTodoVal,
       handleSearchVal,
       handleAddTodo,
-      showTodolist,
+      handleDeleteTodo
     },
   ] = useTodo();
 
@@ -37,7 +36,7 @@ export const TodoTemplate = () => {
       <InputForm serchVal={searchVal} placeholder={"Search Todo"} handleTodoVal={handleSearchVal}/>
 
       { showTodolist.length > 0 && ((
-        <TodoList todoList={showTodolist} setTodos={setTodos} />
+        <TodoList todoList={showTodolist} handleDeleteTodo={handleDeleteTodo} />
       ))}
     </div>
   )

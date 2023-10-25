@@ -33,6 +33,13 @@ export const useTodo = () => {
     }
   }
 
+  const handleDeleteTodo = (id, todoList) => {
+    const newTodos = todoList.filter((todo) => {
+      return todo.id !== id;
+    })
+    setTodos(newTodos)
+  }
+
   // useMemo は、値に変更がある時発火し、画面描写に変更がない場合はキャッシュを使う(処理軽減)
   const showTodolist = useMemo(() => {
     return todos.filter((todo) => {
@@ -49,14 +56,14 @@ export const useTodo = () => {
   const states = {
     todoVal,
     searchVal,
-    setTodos,
+    showTodolist,
   }
 
   const actions = {
     handleTodoVal,
     handleSearchVal,
     handleAddTodo,
-    showTodolist,
+    handleDeleteTodo
   }
 
   return [states, actions]
