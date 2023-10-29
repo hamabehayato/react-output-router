@@ -1,10 +1,10 @@
-# react-output-custom-hook
+# react-output-context
 
 Reactアウトプットサンプル
 
-useState, Propsのみの状態管理で作成したTodoリストに対し、コンポーネントに定義した状態とロジックをカスタムフックに以降したアプリケーション
+状態管理をcontext APIを使用した構成
 
-urlはこちら https://hamabehayato.github.io/react-output-customehook/
+urlはこちら https://hamabehayato.github.io/react-output-context/
 
 ## 目次
 1. 環境構築

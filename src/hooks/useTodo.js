@@ -3,42 +3,56 @@
  *
  * @package hooks
  */
-import { useState, useMemo } from "react"
+import { useState, useMemo } from 'react';
 
 /**
  * useTodo
  */
 export const useTodo = () => {
-  const [todoVal, setTodoVal] = useState('')
-  const [searchVal, setSerchVal] = useState('')
-  const [todos, setTodos] = useState([])
+  const [todoVal, setTodoVal] = useState('');
+  const [searchVal, setSerchVal] = useState('');
+  const [todos, setTodos] = useState([]);
 
   const handleTodoVal = (e) => {
-    setTodoVal(e.target.value)
-  }
+    setTodoVal(e.target.value);
+  };
 
+  /**
+   * Todo検索処理
+   * @param {*} e
+   */
   const handleSearchVal = (e) => {
-    setSerchVal(e.target.value)
-  }
+    setSerchVal(e.target.value);
+  };
 
-  const handleAddTodo = (value) => {
-    if(value) {
-      const newTodoId = todos.length ? todos.length : 0
+  /**
+   * Todo新規登録処理
+   * @param {*} e
+   */
+  const handleAddTodo = (e) => {
+    e.value
+    if (value) {
+      const newTodoId = todos.length ? todos.length : 0;
       const newTodo = {
         id: newTodoId,
-        text: value
-      }
-      setTodos([...todos, newTodo])
-      setTodoVal('')
+        text: value,
+      };
+      setTodos([...todos, newTodo]);
+      setTodoVal('');
     }
-  }
+  };
 
+  /**
+   * Todo削除処理
+   * @param {number} id
+   * @param {Array} todoList
+   */
   const handleDeleteTodo = (id, todoList) => {
     const newTodos = todoList.filter((todo) => {
       return todo.id !== id;
-    })
-    setTodos(newTodos)
-  }
+    });
+    setTodos(newTodos);
+  };
 
   // useMemo は、値に変更がある時発火し、画面描写に変更がない場合はキャッシュを使う(処理軽減)
   const showTodolist = useMemo(() => {
@@ -48,23 +62,18 @@ export const useTodo = () => {
       // "^" + searchVal は、前方から searchVal の値と一致しているか
       // , "i" は、大文字、小文字を区別しない　の意味
       ////////////////
-      const regexp = new RegExp ("^" + searchVal, "i")
-      return todo.text.match(regexp)
-    })
-  })
+      const regexp = new RegExp('^' + searchVal, 'i');
+      return todo.text.match(regexp);
+    });
+  });
 
-  const states = {
+  return {
     todoVal,
     searchVal,
     showTodolist,
-  }
-
-  const actions = {
     handleTodoVal,
     handleSearchVal,
     handleAddTodo,
-    handleDeleteTodo
-  }
-
-  return [states, actions]
-}
+    handleDeleteTodo,
+  };
+};
