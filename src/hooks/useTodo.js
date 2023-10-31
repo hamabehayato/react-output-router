@@ -4,6 +4,7 @@
  * @package hooks
  */
 import { useState, useMemo } from 'react';
+import { INIT_TODO_LIST } from '../constants/data';
 
 /**
  * useTodo
@@ -11,7 +12,7 @@ import { useState, useMemo } from 'react';
 export const useTodo = () => {
   const [todoVal, setTodoVal] = useState('');
   const [searchVal, setSerchVal] = useState('');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(INIT_TODO_LIST);
 
   const handleTodoVal = (e) => {
     setTodoVal(e.target.value);
