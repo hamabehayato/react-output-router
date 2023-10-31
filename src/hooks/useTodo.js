@@ -30,12 +30,11 @@ export const useTodo = () => {
    * @param {*} e
    */
   const handleAddTodo = (e) => {
-    e.value
-    if (value) {
+    if (e) {
       const newTodoId = todos.length ? todos.length : 0;
       const newTodo = {
         id: newTodoId,
-        text: value,
+        text: e,
       };
       setTodos([...todos, newTodo]);
       setTodoVal('');
