@@ -1,12 +1,15 @@
-# react-output-context
+# react-output-router
 
 Reactアウトプットサンプル
 
-状態管理をcontext APIを使用した構成
+react-index-dom用いてSPA構成にしたアプリケーション
 
-urlはこちら https://hamabehayato.github.io/react-output-context/
+状態管理はcontext apiを使用
+
+urlはこちら https://hamabehayato.github.io/react-output-router/
 
 ## 目次
+
 1. 環境構築
 2. アプリケーションの仕様
 
@@ -35,6 +38,7 @@ yarn dev
 ## 2. アプリケーションの仕様
 
 ### 2-1. 仕様
+
 - Todoリスト
   - Todo一覧表示
   - Todo検索処理
@@ -42,6 +46,7 @@ yarn dev
   - Todo削除処理
 
 2-2. 構成技術
+
 - react: 18.2.0
 - react-dom: 18.2.0
 - vite: 4.4.11
