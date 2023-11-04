@@ -5,7 +5,7 @@
  */
 
 /**
- * Todoリストの処置値
+ * Todoリストの初期値
  */
 export const INIT_TODO_LIST = [
   {

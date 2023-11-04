@@ -2,7 +2,7 @@
 
 Reactアウトプットサンプル
 
-react-index-dom用いてSPA構成にしたアプリケーション
+react-router-dom用いてSPA構成にしたアプリケーション
 
 状態管理はcontext apiを使用
 
