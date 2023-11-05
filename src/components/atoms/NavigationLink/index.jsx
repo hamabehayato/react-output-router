@@ -16,8 +16,8 @@ export const NavigationLink = (props) => {
 
   return (
     <>
-      <li class={styles.item}>
-        <Link class={styles.link} to={to}>
+      <li className={styles.item}>
+        <Link className={styles.link} to={to}>
           {label}
         </Link>
       </li>

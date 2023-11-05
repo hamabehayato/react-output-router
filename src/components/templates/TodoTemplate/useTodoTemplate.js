@@ -37,10 +37,21 @@ export const useTodoTemplate = ({ originTodoList }) => {
     setInputSearch(e.target.value);
   }, []);
 
+  /**
+   * Todo削除処理
+   * @param {number} id
+   */
+  const handleDeleteTodo = (id) => {
+    const newTodos = originTodoList.filter((todo) => {
+      return todo.id !== id;
+    });
+    setOriginTodoList(newTodos);
+  };
+
   return [
     /* states */
     { inputSearch, showTodoList },
     /* actions */
-    { handleChangeSearch },
+    { handleChangeSearch, handleDeleteTodo },
   ];
 };

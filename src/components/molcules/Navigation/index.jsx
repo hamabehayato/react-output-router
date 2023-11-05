@@ -16,7 +16,7 @@ import styles from './styles.module.css';
 export const Navigation = () => {
   return (
     <>
-      <ul class={styles.list}>
+      <ul className={styles.list}>
         <NavigationLink to={TODO_PATH.TOP} label={'Top'} />
         <NavigationLink to={TODO_PATH.CREATE} label={'Create'} />
       </ul>

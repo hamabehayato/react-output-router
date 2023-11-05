@@ -7,11 +7,10 @@ import { useTodoContext } from '../../../contexts/TodoContext';
 import { BaseLayout } from '../../organisms/BaseLayout';
 import { InputForm } from '../../atoms/InputForm';
 import { TodoList } from '../../organisms/TodoList';
-import { useTodo } from '../../../hooks/useTodo';
 import { useTodoTemplate } from './useTodoTemplate';
 
 export const TodoTemplate = () => {
-  const { originTodoList } = useTodoContext();
+  const { originTodoList, deleteTodo } = useTodoContext();
   const [{ inputSearch, showTodoList }, { handleChangeSearch }] = useTodoTemplate({
     originTodoList,
   });
@@ -29,12 +28,7 @@ export const TodoTemplate = () => {
         onChange={handleChangeSearch}
       />
 
-      {showTodoList.length > 0 && (
-        <TodoList todoList={showTodoList} />
-
-        // TODO 後でDELETE処理追加する参考用コメント
-        // <TodoList todoList={showTodoList} handleDeleteTodo={handleDeleteTodo} />
-      )}
+      {showTodoList.length > 0 && <TodoList showTodoList={showTodoList} deleteTodo={deleteTodo} />}
     </BaseLayout>
   );
 };

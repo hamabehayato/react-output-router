@@ -36,32 +36,19 @@ export const useTodo = () => {
   );
 
   /**
-   * Todo検索処理
-   * @param {*} e
-   */
-  const searchTodo = (e) => {
-    return originTodoList.filter((todo) => {
-      const regexp = new RegExp('^' + searchVal, 'i');
-      return todo.title.match(regexp);
-    });
-  };
-
-  /**
    * Todo削除処理
    * @param {number} id
-   * @param {Array} todoList
    */
-  const handleDeleteTodo = (id, todoList) => {
-    const newTodos = todoList.filter((todo) => {
+  const deleteTodo = (id) => {
+    const newTodos = originTodoList.filter((todo) => {
       return todo.id !== id;
     });
-    setTodos(newTodos);
+    setOriginTodoList(newTodos);
   };
 
   return {
     addTodo,
     originTodoList,
-    searchTodo,
-    handleDeleteTodo,
+    deleteTodo,
   };
 };
