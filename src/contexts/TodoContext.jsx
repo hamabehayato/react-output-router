@@ -17,13 +17,14 @@ const TodoContext = createContext({});
  * @constructor
  */
 export const TodoProvider = ({ children }) => {
-  const { addTodo, originTodoList, deleteTodo } = useTodo();
+  const { addTodo, originTodoList, updateTodo, deleteTodo } = useTodo();
 
   return (
     <TodoContext.Provider
       value={{
         addTodo,
         originTodoList,
+        updateTodo,
         deleteTodo,
       }}
     >

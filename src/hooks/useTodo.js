@@ -36,6 +36,22 @@ export const useTodo = () => {
   );
 
   /**
+   * 更新処理
+   * @param {number} id
+   * @param {string} title
+   * @param {string} content
+   */
+  const updateTodo = (id, title, content) => {
+    const newTodos = originTodoList.map((todo) => {
+      if (todo.id === id) {
+        return (todo = { id: id, title, title, content, content });
+      }
+      return todo;
+    });
+    setOriginTodoList(newTodos);
+  };
+
+  /**
    * Todo削除処理
    * @param {number} id
    */
@@ -49,6 +65,7 @@ export const useTodo = () => {
   return {
     addTodo,
     originTodoList,
+    updateTodo,
     deleteTodo,
   };
 };

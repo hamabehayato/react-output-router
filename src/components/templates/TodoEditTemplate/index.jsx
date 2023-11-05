@@ -11,20 +11,24 @@ import { CommonButton } from '../../atoms/CommonButton';
 import { useTodoEditTemplate } from './useTodoEditTemplate';
 
 export const TodoEditTemplate = () => {
-  const { addTodo } = useTodoContext();
+  const { updateTodo, originTodoList } = useTodoContext();
   const [
-    { inputTitle, inputContent },
-    { handleChangeTitle, handleChangeContent, handleCreateTodo },
-  ] = useTodoEditTemplate({ addTodo });
+    { todo, inputTitle, inputContent },
+    { handleChangeTitle, handleChangeContent, handleUpdateTodo },
+  ] = useTodoEditTemplate({
+    updateTodo,
+    originTodoList,
+  });
 
   /**
    * TodoEditTemplate
    * @returns {JSX.Element}
    * @constructor
    */
+
   return (
-    <BaseLayout title={'Create Todo'}>
-      <form onSubmit={handleCreateTodo}>
+    <BaseLayout title={'Edit Todo'}>
+      <form onSubmit={handleUpdateTodo}>
         <InputForm inputVal={inputTitle} placeholder={'Title'} onChange={handleChangeTitle} />
 
         <TextAreaForm
@@ -33,7 +37,7 @@ export const TodoEditTemplate = () => {
           onChange={handleChangeContent}
         />
 
-        <CommonButton label={'Create Todo'} type={'submit'} />
+        <CommonButton label={'Edit Todo'} type={'submit'} />
       </form>
     </BaseLayout>
   );
