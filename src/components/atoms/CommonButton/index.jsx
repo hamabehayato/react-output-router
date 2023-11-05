@@ -15,7 +15,7 @@ export const CommonButton = (props) => {
   const { label, type, onClick } = props;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <button className={styles.button} type={type} onClick={onClick}>
         {label}
       </button>

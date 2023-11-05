@@ -4,10 +4,10 @@
  * @package components
  */
 import { useTodoContext } from '../../../contexts/TodoContext';
+import { BaseLayout } from '../../organisms/BaseLayout';
 import { InputForm } from '../../atoms/InputForm';
 import { TodoList } from '../../organisms/TodoList';
 import { useTodo } from '../../../hooks/useTodo';
-import styles from './styles.module.css';
 
 export const TodoTemplate = () => {
   const { searchVal, handleSearchVal, handleDeleteTodo } = useTodo();
@@ -19,15 +19,12 @@ export const TodoTemplate = () => {
    * @constructor
    */
   return (
-    <div className={styles.container}>
-      <div className={styles.titleBox}>
-        <h1>Todo List</h1>
-      </div>
+    <BaseLayout title={'TodoList'}>
       <InputForm serchVal={searchVal} placeholder={'Search Todo'} />
 
       {originTodoList.length > 0 && (
         <TodoList todoList={originTodoList} handleDeleteTodo={handleDeleteTodo} />
       )}
-    </div>
+    </BaseLayout>
   );
 };

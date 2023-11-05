@@ -4,11 +4,11 @@
  * @package components
  */
 import { useTodoContext } from '../../../contexts/TodoContext';
+import { BaseLayout } from '../../organisms/BaseLayout';
 import { InputForm } from '../../atoms/InputForm';
 import { TextAreaForm } from '../../atoms/TextAreaForm';
 import { CommonButton } from '../../atoms/CommonButton';
 import { useTodoCreateTemplate } from './useTodoCreateTemplate';
-import styles from './styles.module.css';
 
 export const TodoCreateTemplate = () => {
   const { addTodo } = useTodoContext();
@@ -23,11 +23,7 @@ export const TodoCreateTemplate = () => {
    * @constructor
    */
   return (
-    <div className={styles.container}>
-      <div className={styles.titleBox}>
-        <h2>Create Todo</h2>
-      </div>
-
+    <BaseLayout title={'Create Todo'}>
       <form onSubmit={handleCreateTodo}>
         <InputForm inputVal={inputTitle} placeholder={'Title'} onChange={handleChangeTitle} />
 
@@ -39,6 +35,6 @@ export const TodoCreateTemplate = () => {
 
         <CommonButton label={'Create Todo'} type={'submit'} />
       </form>
-    </div>
+    </BaseLayout>
   );
 };

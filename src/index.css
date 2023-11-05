@@ -31,37 +31,8 @@ h2 {
 
 button {
   overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
-}
-
-button {
   text-transform: none; /* Firefox 40+, Internet Explorer 11- */
-}
-
-/* Apply cursor pointer to button elements */
-button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-[role="button"] {
-  color: inherit;
-  cursor: pointer;
-}
-
-/* Remove inner padding and border in Firefox 4+ */
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-/* Replace focus style removed in the border reset above */
-button:-moz-focusring,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  outline: 1px dotted ButtonText;
+  cursor: pointer
 }
 
 button,
