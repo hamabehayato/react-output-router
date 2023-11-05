@@ -10,12 +10,11 @@ import styles from './styles.module.css';
  * @returns {JSX.Element}
  * @constructor
  */
-export const InputForm = (props) => {
-  const { inputVal, placeholder, onChange } = props;
-
+export const InputForm = ({ disabled = false, inputVal, placeholder, onChange }) => {
   return (
     <div className={styles.container}>
       <input
+        disabled={disabled}
         className={styles.input}
         placeholder={placeholder}
         value={inputVal}

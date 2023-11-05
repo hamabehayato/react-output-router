@@ -11,12 +11,11 @@ import styles from './styles.module.css';
  * @returns {JSX.Element}
  * @constructor
  */
-export const TextAreaForm = (props) => {
-  const { inputVal, placeholder, onChange } = props;
-
+export const TextAreaForm = ({ disabled = false, inputVal, placeholder, onChange }) => {
   return (
     <div className={styles.container}>
       <textarea
+        disabled={disabled}
         className={styles.textarea}
         placeholder={placeholder}
         value={inputVal}
