@@ -10,10 +10,12 @@
 export const INIT_TODO_LIST = [
   {
     id: 1,
-    text: 'test1',
+    title: 'test1',
+    content: 'test1 content',
   },
   {
     id: 2,
-    text: 'test2',
+    title: 'test2',
+    content: 'test2 content',
   },
 ];

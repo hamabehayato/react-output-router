@@ -1,22 +1,23 @@
 /**
- * InpurForm
+ * TextAreaForm
  *
  * @package components
  */
+import { useState } from 'react';
 import styles from './styles.module.css';
 
 /**
- * InputForm
+ * TextAreaForm
  * @returns {JSX.Element}
  * @constructor
  */
-export const InputForm = (props) => {
+export const TextAreaForm = (props) => {
   const { inputVal, placeholder, onChange } = props;
 
   return (
     <div className={styles.container}>
-      <input
-        className={styles.input}
+      <textarea
+        className={styles.textarea}
         placeholder={placeholder}
         value={inputVal}
         onChange={onChange}

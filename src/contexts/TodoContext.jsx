@@ -3,8 +3,8 @@
  *
  * @package contexts
  */
-import { useContext, createContext } from "react"
-import { useTodo } from "../hooks/useTodo"
+import { useContext, createContext } from 'react';
+import { useTodo } from '../hooks/useTodo';
 
 /**
  * TodoContext
@@ -13,30 +13,22 @@ const TodoContext = createContext({});
 
 /**
  * TodoProvider
- * @returns {JSX.Element}
+ * @param children
  * @constructor
  */
-export const TodoProvider = () => {
-  const {
-    todoVal,
-    searchVal,
-    showTodolist,
-    handleTodoVal,
-    handleSearchVal,
-    handleAddTodo,
-    handleDeleteTodo
-  } = useTodo();
+export const TodoProvider = ({ children }) => {
+  const { addTodo, originTodoList, searchVal, showTodolist, handleSearchVal, handleDeleteTodo } =
+    useTodo();
 
   return (
     <TodoContext.Provider
       value={{
-        todoVal,
+        addTodo,
+        originTodoList,
         searchVal,
         showTodolist,
-        handleTodoVal,
         handleSearchVal,
-        handleAddTodo,
-        handleDeleteTodo
+        handleDeleteTodo,
       }}
     >
       {children}
@@ -44,4 +36,4 @@ export const TodoProvider = () => {
   );
 };
 
-export const useTodoContext = () => useContext(TodoContext)
+export const useTodoContext = () => useContext(TodoContext);

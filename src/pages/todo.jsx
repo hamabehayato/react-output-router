@@ -3,7 +3,7 @@
  *
  * @package pages
  */
-import { TodoTemplate } from "../components/templates/TodoTemplate";
+import { TodoTemplate } from '../components/templates/TodoTemplate';
 
 /**
  * TodoPage
@@ -11,7 +11,7 @@ import { TodoTemplate } from "../components/templates/TodoTemplate";
  * @constructor
  */
 export const TodoPage = () => {
-  return <TodoTemplate />
-}
+  return <TodoTemplate />;
+};
 
-export default TodoPage
+export default TodoPage;
