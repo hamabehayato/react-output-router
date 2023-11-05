@@ -4,7 +4,7 @@
  * @package components
  */
 import { NavigationLink } from '../../atoms/NavigationLink';
-import { TODO_PATH } from '../../../constants/pagenations';
+import { NAVIGATION_PATH } from '../../../constants/navigations';
 import styles from './styles.module.css';
 // import styles from './styles.module.css';
 
@@ -17,8 +17,8 @@ export const Navigation = () => {
   return (
     <>
       <ul className={styles.list}>
-        <NavigationLink to={TODO_PATH.TOP} label={'Top'} />
-        <NavigationLink to={TODO_PATH.CREATE} label={'Create'} />
+        <NavigationLink to={NAVIGATION_PATH.TOP} label={'Top'} />
+        <NavigationLink to={NAVIGATION_PATH.CREATE} label={'Create'} />
       </ul>
     </>
   );

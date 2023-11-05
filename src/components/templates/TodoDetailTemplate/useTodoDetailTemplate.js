@@ -1,5 +1,5 @@
 /**
- * useTodoCreateTemplate
+ * useTodoDetailTemplate
  *
  * @package hooks
  */
@@ -8,14 +8,14 @@ import { useNavigate } from 'react-router-dom';
 import { NAVIGATION_PATH } from '../../../constants/navigations';
 
 /**
- * useTodoCreateTemplate
+ * useTodoDetailTemplate
  * @param addTodo
  * @returns {[{inputTitle: string, inputContent: string}
- * {handleCreateTodo: ((function(*): void)|*)
+ * {handleDetailTodo: ((function(*): void)|*)
  * handleChangeContent: (function(*): void)
  * handleChangeTitle: (function(*): void)}]}
  */
-export const useTodoCreateTemplate = ({ addTodo }) => {
+export const useTodoDetailTemplate = ({ addTodo }) => {
   const navigate = useNavigate();
 
   /* local state */
@@ -43,7 +43,7 @@ export const useTodoCreateTemplate = ({ addTodo }) => {
    * Todo の新規登録処理
    * @type {function(*): void |*}
    */
-  const handleCreateTodo = useCallback(
+  const handleDetailTodo = useCallback(
     (e) => {
       // e.preventDefault(): ブラウザデフォルトのform 送信機能を無効化
       e.preventDefault();
@@ -60,6 +60,6 @@ export const useTodoCreateTemplate = ({ addTodo }) => {
     /* states */
     { inputTitle, inputContent },
     /* actions */
-    { handleChangeTitle, handleChangeContent, handleCreateTodo },
+    { handleChangeTitle, handleChangeContent, handleDetailTodo },
   ];
 };
