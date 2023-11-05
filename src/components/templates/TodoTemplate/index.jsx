@@ -8,10 +8,13 @@ import { BaseLayout } from '../../organisms/BaseLayout';
 import { InputForm } from '../../atoms/InputForm';
 import { TodoList } from '../../organisms/TodoList';
 import { useTodo } from '../../../hooks/useTodo';
+import { useTodoTemplate } from './useTodoTemplate';
 
 export const TodoTemplate = () => {
-  const { searchVal, handleSearchVal, handleDeleteTodo } = useTodo();
   const { originTodoList } = useTodoContext();
+  const [{ inputSearch, showTodoList }, { handleChangeSearch }] = useTodoTemplate({
+    originTodoList,
+  });
 
   /**
    * TodoTemplate
@@ -20,10 +23,17 @@ export const TodoTemplate = () => {
    */
   return (
     <BaseLayout title={'TodoList'}>
-      <InputForm serchVal={searchVal} placeholder={'Search Todo'} />
+      <InputForm
+        inputVal={inputSearch}
+        placeholder={'Search Key Word'}
+        onChange={handleChangeSearch}
+      />
 
-      {originTodoList.length > 0 && (
-        <TodoList todoList={originTodoList} handleDeleteTodo={handleDeleteTodo} />
+      {showTodoList.length > 0 && (
+        <TodoList todoList={showTodoList} />
+
+        // TODO 後でDELETE処理追加する参考用コメント
+        // <TodoList todoList={showTodoList} handleDeleteTodo={handleDeleteTodo} />
       )}
     </BaseLayout>
   );

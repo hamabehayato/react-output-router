@@ -17,7 +17,7 @@ const TodoContext = createContext({});
  * @constructor
  */
 export const TodoProvider = ({ children }) => {
-  const { addTodo, originTodoList, searchVal, showTodolist, handleSearchVal, handleDeleteTodo } =
+  const { addTodo, originTodoList, showTodoList, searchVal, handleSearchVal, handleDeleteTodo } =
     useTodo();
 
   return (
@@ -25,8 +25,8 @@ export const TodoProvider = ({ children }) => {
       value={{
         addTodo,
         originTodoList,
+        showTodoList,
         searchVal,
-        showTodolist,
         handleSearchVal,
         handleDeleteTodo,
       }}
